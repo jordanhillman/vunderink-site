@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="en">
+<head>
+
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+
+    <style type="text/css">
+
+/* Form styling */
+
+ input[type=text], input[type=email], textarea {
+ width: 100%;
+ padding: 12px 20px;
+ margin: 8px 0;
+ display: inline-block;
+}
+
+ /* Top navigation bar */
+
+.topnav {
+  background-color: #31708E;
+  overflow: hidden;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+  background-color: #AA046D;
+  color: white;
+}
+
+
+/* Header, page, and background styling */
+
+.header {
+  text-align: center;
+}
+
+.h1{
+margin-top: 5;
+}
+
+
+.page {
+  text-align: center;
+  width: 50%;
+  height: 1000 px;
+  margin: auto;
+}
+
+.page2 {
+  text-align: center;
+  width: 50%;
+  height: 1000 px;
+  margin: auto;
+  background-color: #CCCCDD;
+
+}
+
+.form {
+  text-align: center;
+  width: 50%;
+  height: 1000 px;
+  margin: auto;
+}
+
+.bg {
+    background-image: url("{% static 'trees.jpg' %}");
+    min-height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+
+}
+
+.container {
+    background-color: #7FB1D3;
+    border-radius: 15px;
+}
+
+
+.imagecontainer {
+background-color: #222222;
+padding:20px
+
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(5px, 1fr));
+  padding-bottom: 30px;
+
+}
+
+
+
+html, body {
+    height: 100%;
+    background-color: #F7F9FB;
+}
+#wrap {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin: 0 auto -60px;
+}
+#footer {
+    height: 60px;
+}
+
+
+/* Modal and Carousel styling for Gallery */
+
+.img-size {
+	padding: 0;
+	margin: 0;
+	max-height: 700px;
+	max-width: 700px;
+	height: auto;
+	width: auto;
+	background-size: cover;
+	overflow: hidden;
+}
+
+.modal-content {
+   width: 90vh;
+  border:none;
+}
+
+.modal-body {
+   padding: 0;
+   height: auto;
+}
+
+.carousel-item {
+    img {
+        height: 60vx;
+        object-fit: cover;
+    }
+    .carousel-control-prev-icon {
+	    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23009be1' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E");
+	    width: 30px;
+	    height: 48px;
+    }
+    .carousel-control-next-icon {
+	    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23009be1' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E");
+	    width: 30px;
+	    height: 48px;
+    }
+}
+
+
+
+/* Small screen overrides */
+
+@media only screen and (max-device-width: 480px) {
+        .form {
+            text-align: center;
+            width: 75%;
+            height: 1000 px;
+            margin: auto;
+        }
+
+        .page {
+            width: 75%;
+        }
+
+        .page2 {
+            width: 75%;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: none;
+            padding-bottom: 30px;
+
+        }
+        .img-size {
+            padding: 0;
+	        margin: 0;
+	        max-height: 500px;
+	        max-width: 300px;
+	        height: auto;
+	        width: auto;
+	        background-size: cover;
+	        overflow: hidden;
+        }
+
+}
+
+    </style>
+
+    <title>{% block title %}Lauren Vunderink{% endblock %}</title>
+
+</head>
+
+<body>
+
+<div id="page header" class="header" style="padding-bottom:10px">
+    <h1 class="mt-2">Lauren Vunderink</h1>
+    <h6>Writing / Photography</h6>
+
+
+
+
+</div>
+
+<div class="topnav">
+  <a href="/home">Home</a>
+  <a href="/blog">Blog</a>
+  <a href="/contact">Contact</a>
+    <a href="/gallery">Gallery</a>
+
+</div>
+
+
+<div class="bg" id="wrap">
+
+
+
+
+
+
+
+
+{% block content %}
+
+
+<div id="Page text" class="page" style="padding-top: 10px;">
+    <br>Welcome to the home page!<br><br>This site is under construction. Check out the blog and contact pages and stay tuned for more content!<br>
+</div>
+
+{% endblock %}
+
+
+
+
+
+
+
+</div>
+
+<div id="footer"></div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+</body>
+</html>

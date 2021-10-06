@@ -1,0 +1,33 @@
+{% extends 'main/base.html' %}
+
+
+{% block title %}
+Blog
+{% endblock %}
+
+{% block content %}
+<div id="Page text" class="page" style="padding-top: 10px;">
+    <div><h3 class="mt-2">Blog</h3><br></div>
+{% if latest_post_list %}
+    {% for post in latest_post_list %}
+    <div class="container">
+
+        <div class="header"><br><h4>{{ post.title }}</h4></div>
+<div class="content">{{ post.content|linebreaks }}
+    <font size="-2">Posted {{ post.pub_date }}</font><br><br>
+
+
+</div>
+</div>
+<div>
+
+
+    <br></div>
+
+
+
+    {% endfor %}
+{% else %}
+    <p>No posts are available.</p>
+{% endif %}
+{% endblock %}
