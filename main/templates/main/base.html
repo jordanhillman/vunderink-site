@@ -25,11 +25,12 @@
  /* Top navigation bar */
 
 .topnav {
-  background-color: #31708E;
+  background-color: #666666;
   overflow: hidden;
   text-align: center;
   display: flex;
   justify-content: center;
+
 }
 
 /* Style the links inside the navigation bar */
@@ -52,6 +53,11 @@
 .topnav a.active {
   background-color: #AA046D;
   color: white;
+}
+
+/* Hide the link that should open and close the topnav on small screens */
+.topnav .icon {
+  display: none;
 }
 
 
@@ -79,6 +85,7 @@ margin-top: 5;
   height: 1000 px;
   margin: auto;
   background-color: #CCCCDD;
+  min-width: 720px;
 
 }
 
@@ -90,18 +97,25 @@ margin-top: 5;
 }
 
 .bg {
-    background-image: url("{% static 'trees.jpg' %}");
+    <!---background-image: url("{% static 'trees.jpg' %}");>
     min-height: 100%;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    background-color: #BBBBBB;
     background-attachment: fixed;
 
 }
 
 .container {
-    background-color: #7FB1D3;
+    background-color: #EEEEEE;
     border-radius: 15px;
+
+}
+
+
+.contactcontainer{
+    column-count: 2;
 }
 
 
@@ -115,6 +129,7 @@ padding:20px
   display: grid;
   grid-template-columns: repeat(3, minmax(5px, 1fr));
   padding-bottom: 30px;
+  min-width:940 px;
 
 }
 
@@ -187,12 +202,19 @@ html, body {
             margin: auto;
         }
 
+
+        .topnav {
+        display: table-cell;
+        }
+
+
         .page {
             width: 75%;
         }
 
         .page2 {
             width: 75%;
+            min-width: 0px;
         }
 
         .grid-container {
@@ -224,7 +246,7 @@ html, body {
 
 <div id="page header" class="header" style="padding-bottom:10px">
     <h1 class="mt-2">Lauren Vunderink</h1>
-    <h6>Writing / Photography</h6>
+    <h6>writer, filmmaker, musician, photographer</h6>
 
 
 
@@ -232,10 +254,15 @@ html, body {
 </div>
 
 <div class="topnav">
-  <a href="/home">Home</a>
+  <a href="/home">Books</a>
+    <a href="/film">Film</a>
+    <a href="/music">Music</a>
+        <a href="/gallery">Photography</a>
+      <a href="/contact">Contact</a>
   <a href="/blog">Blog</a>
-  <a href="/contact">Contact</a>
-    <a href="/gallery">Gallery</a>
+
+
+
 
 </div>
 
@@ -248,13 +275,29 @@ html, body {
 
 
 
-
 {% block content %}
 
 
 <div id="Page text" class="page" style="padding-top: 10px;">
-    <br>Welcome to the home page!<br><br>This site is under construction. Check out the blog and contact pages and stay tuned for more content!<br>
+    <h3 class="mt-2">Books</h3><br>
+    <div class="container" style="padding-top: 15px; padding-bottom: 10px;">
+        <br>
+
+Lauren Vunderink writes books, scripts, and song lyrics. <br><br>
+
+She has self-published a book of photography inspired by visual anthropology, available below. <br><br>
+
+        <a href="https://www.amazon.com/Through-Lens-Culture-North-India/dp/B08SH89N72"><b>Through the Lens of Culture: North India</b><br>
+        Click to purchase on Amazon
+        <br><br>
+
+            {% load static %} <img src="{% static 'northindiacover.jpeg' %}" alt="home" width="70%"/><br></a>
+
+        <center><br>From the soaring Himalayas to the rugged Thar desert, the ecosystems of north India are as diverse and vibrant as the human cultures that populate the region. Experience the history and culture of north India on this photographic journey through some of the area’s most celebrated sites and cultural events. Photographer and anthropologist Lauren Vunderink presents a collection of 170+ images inspired by themes of cultural and historical education. Featured locations include: Chopta, Rishikesh, Delhi, Agra, Jodhpur, Kumbhalgarh, Ranakpur, Udaipur. “North India” is the first book released in Vunderink's “Through the Lens of Culture” series. </center>
+<br>
 </div>
+</div>
+    <br><br>
 
 {% endblock %}
 

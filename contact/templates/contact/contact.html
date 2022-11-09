@@ -5,21 +5,46 @@
 
 
 
+
+
 {% block title %}
 Contact
 {% endblock %}
 
 {% block content %}
+
+
 <div class="page" style="padding-top: 10px;"><h3 class="mt-2">Contact</h3></div>
 <div id="Page text", class="form"><br>
-<div class="container" style="padding-top: 15px; padding-bottom: 10px;">
+<div class="container" style="padding-top: 50px; padding-bottom: 10px; padding-left: 50px; padding-right: 50px;  ">
+
+    <style type="text/css">
+img {
+  border-radius: 50%;
+}
+
+</style>
+
+    <div class="contactcontainer"><p>{% load static %} <img src="{% static 'lv-headshot.jpg' %}" alt="home" width="50%" height="50%"/></p>  <p><br><br>Lauren Vunderink is a creator based in her hometown of Austin, Texas. She holds a bachelor’s degree in Anthropology with a focus in East Asian Studies from Connecticut College.</p></div>
+
+<br><br>
+    I would love to hear from you! Please send me an email at laurenvunderink@gmail.com, use the form below to send a message, or follow @laurenvun on Instagram.<br><br>
     <form action="" method="post">
    {% csrf_token %}
    {{ form }}
    <input type="submit" value="Submit">
 </form>
 </div>
+<br>
+<!--
+<div id="Page text", class="form"><br>
+<div class="container" style="padding-top: 15px; padding-bottom: 10px;">
+    <h5>Follow on Instagram</h5>
+    <a href="www.instagram.com/laurenvun">{% load static %} <img src="{% static 'instagram.png' %}" alt="home" width="30" height="30" /> @laurenvun </a>
 
 
+</div>
+
+-->
     </div>
 {% endblock %}

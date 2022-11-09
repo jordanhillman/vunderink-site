@@ -26,7 +26,8 @@ urlpatterns = [
     path('contact/', include('contact.urls')),
     path('gallery/', include('gallery.urls')),
     path('imagefit/', include('imagefit.urls')),
-
+    path('film/', include('film.urls')),
+    path('music/', include('music.urls')),
 
 ]
 
