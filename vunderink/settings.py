@@ -16,11 +16,15 @@ import environ
 from dotenv import load_dotenv
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
-dotenv_path = os.path.join(BASE_DIR, 'config.env')
 
-#BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-#load_dotenv(os.path.join(BASE_DIR, '.env'))
+#Revert to these to debug!
+#BASE_DIR = Path(__file__).resolve().parent.parent
+#dotenv_path = os.path.join(BASE_DIR, 'config.env')
+
+BASE_DIR = Path(__file__).resolve().parent.parent
+
+
+
 
 
 # Quick-start development settings - unsuitable for production
@@ -28,16 +32,13 @@ dotenv_path = os.path.join(BASE_DIR, 'config.env')
 
 # SECURITY WARNING: keep the secret key used in production secret!
 
-#dotenv_file = os.path.join(BASE_DIR, ".env")
-#if os.path.isfile(dotenv_file):
-#    dotenv.load_dotenv(dotenv_file)
 
-load_dotenv()
+load_dotenv('config.env')
 
 
+SECRET_KEY = os.getenv("SECRET_KEY")
 
-
-SECRET_KEY = open('/Users/jordanhillman/Desktop/laurenvunderink/secret-key.txt', 'r').read().strip()
+#SECRET_KEY = open('/Users/jordanhillman/Desktop/laurenvunderink/secret-key.txt', 'r').read().strip()
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -159,8 +160,8 @@ STATICFILES_DIRS = [
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-EPASS = open('/Users/jordanhillman/Desktop/laurenvunderink/epass.txt', 'r').read().strip()
-
+#EPASS = open('/Users/jordanhillman/Desktop/laurenvunderink/epass.txt', 'r').read().strip()
+EPASS = os.getenv("EPASS")
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
